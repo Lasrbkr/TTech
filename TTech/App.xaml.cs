@@ -8,7 +8,7 @@ namespace TTech
         {
             InitializeComponent();
 
-            MainPage = new TTechPage();
+            MainPage = new LogIn();
         }
 
         protected override void OnStart()

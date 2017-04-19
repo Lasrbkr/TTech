@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentView 
+<ContentPage 
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 	x:Class="TTech.LogIn">
-	<ContentView.Padding>
+	<ContentPage.Padding>
 		<OnPlatform x:TypeArguments="Thickness"
                     iOS="30, 20, 30, 0"
                     Android="30, 0, 30, 0"
                     WinPhone="30, 20, 30, 20" />
-	</ContentView.Padding>
-	<ContentView.Content>
+	</ContentPage.Padding>
+	<ContentPage.Content>
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="*" />
@@ -20,9 +20,9 @@
 				<RowDefinition Height="*" />
 			</Grid.RowDefinitions>
 			<Image Grid.Row="1" Source="usuario" />
-			<Entry Grid.Row="2" Placeholder="Usuario" />
-			<Entry Grid.Row="3" Placeholder="Contraseña" />
-			<Button Grid.Row="4" Text="Ingresar" FontAttributes="Bold" />
+			<Entry Grid.Row="2" x:Name="txtUsuario" Placeholder="Usuario" />
+			<Entry Grid.Row="3" x:Name="txtContrasena" Placeholder="Contraseña" />
+			<Button Grid.Row="4" Text="Ingresar" FontAttributes="Bold" Clicked="Sesion_Clicked" />
 		</Grid>
-	</ContentView.Content>
-</ContentView>
+	</ContentPage.Content>
+</ContentPage>
