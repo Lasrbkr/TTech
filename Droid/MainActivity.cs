@@ -1,13 +1,9 @@
-﻿using System;
-
+﻿#region Referencias
+using Acr.UserDialogs;
 using Android.App;
-using Android.Content;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-
+#endregion
 namespace TTech.Droid
 {
     [Activity(Label = "TTech.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -20,8 +16,9 @@ namespace TTech.Droid
 
             base.OnCreate(bundle);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
+            UserDialogs.Init(this);
 
+            global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }
     }
