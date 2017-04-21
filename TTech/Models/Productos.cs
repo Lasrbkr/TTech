@@ -11,8 +11,8 @@ namespace TTech
         public string Descripcion { get; set; }
     }
 
-    public class Productos
+    public class ListaProductos
     {
-        public List<Producto> Lista { get; set; }
+        public List<Producto> Productos { get; set; }
     }
 }

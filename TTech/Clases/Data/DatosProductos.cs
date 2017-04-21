@@ -23,16 +23,17 @@ namespace TTech
                 {
                     using (var client = DatosConexion.conexion())
                     {
-                        HttpResponseMessage response = await client.GetAsync("58f687dc100000ce0124eee9");
+                        HttpResponseMessage response = await client.GetAsync("58fa37171100002f1ed210b8");
                         if (response.IsSuccessStatusCode)
                         {
                             var content = await response.Content.ReadAsStringAsync();
                             content = content.Replace("},\n    ]", "}]");
                             content = content.Replace("\",\n        }", "\"}");
-                            content = DependencyService.Get<IJavaScriptStringEncoder>().EncodeString(content);
-                            var obj = JsonConvert.DeserializeObject<Productos>(content);
+                            //content = DependencyService.Get<IJavaScriptStringEncoder>().EncodeString(content);
 
-                            lista = obj.Lista;
+                            var obj = JsonConvert.DeserializeObject<ListaProductos>(content);
+
+                            lista = obj.Productos;
                         }
                     }
                     return lista ?? new List<Producto>();
